@@ -6,7 +6,7 @@
 
   function _renderRootSpan(id, name) {
     var li = '<li id="' + id + '"><span id="' + id + '" class="ui-tree-root ui-tree-el ui-tree-title">' + name;
-    li += '<span class="ui-add"/><span class="ui-delete"/>';
+    li += '<span class="ui-add">&nbsp;&nbsp;</span><span class="ui-delete">&nbsp;&nbsp;</span>';
     li += '</span></li>';
     var r = $(li);
     //var s = $(li).children('span.ui-tree-root');
