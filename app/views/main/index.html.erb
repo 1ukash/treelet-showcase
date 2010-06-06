@@ -1,0 +1,27 @@
+
+<% content_for(:head_scripts) do%>
+  <script language="javascript" type="text/javascript">
+    $(function() {
+      $('#tree').tree();
+    });
+  </script>
+<% end %>
+
+<% content_for(:menu) do %>
+
+  <p> Foo Menu </p>
+  <ul id="tree">
+    <% @roots.each do |r| %>
+      <li id="<%= r.id %>" >
+        <%= r.name %>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<% content_for(:content) do %>
+
+  You can find foo content here
+
+<% end %>

@@ -1,0 +1,42 @@
+#main {
+  width: 1000px;
+  min-height:40em;
+  padding: 10px;
+}
+
+#menu {
+  overflow: auto;
+  width: 188px;
+  height: 388px;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  padding: 5px;
+}
+
+#menu_widget {
+  width: 200px;
+  height: 400px;
+  position: absolute;
+  left: 40px;
+  top: 40px; 
+}
+
+#content {
+  min-height: 35em;
+  position: absolute;
+  width: 800px;
+  left: 210px;
+  top: 55px;
+  padding: 5px 5px 5px 45px;
+}
+
+#header {
+  padding: 5px;
+}
+
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  padding:5px;
+}

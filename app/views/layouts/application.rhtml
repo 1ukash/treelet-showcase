@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>Sample Ruby application with tree</title> 
+  <%= stylesheet_link_tag 'cupertino/jquery.ui' %>
+  <%= stylesheet_link_tag 'ui.tree' %>
+  <%= stylesheet_link_tag 'main' %>
+  <%= javascript_include_tag 'jquery-1.4.2' %>
+  <%= javascript_include_tag 'jqueryui-dev/jquery-ui-1.8.1.custom' %>
+  <%= javascript_include_tag 'application' %>
+  <%= yield :head_scripts %>
+</head>
+
+<body>
+  <div id="main" > 
+    <div id="content" class="ui-widget ui-widget ui-widget-content ui-corner-all">
+      <div class="ui-widget-header ui-corner-all" id="header">Foo Bar application header</div>
+      <div style="padding-top:5px;"><%= yield :content%></div>
+    </div>
+    <div class="ui-overlay">
+      <div id="menu_widget" class="ui-widget-shadow ui-corner-all"/>
+    </div>
+    <div id="menu" class="ui-corner-all ui-widget-content ui-widget"><%= yield :menu%></div>
+  </div>
+</body>
+</html>
