@@ -9,17 +9,15 @@
     li += '<span class="ui-add"/><span class="ui-delete"/>';
     li += '</span></li>';
     var r = $(li);
-    var s = $(li).children('span');
-    var add = s.children("span.ui-add");
-    var del = s.children("span.ui-delete");
-    s.mouseenter(
+    //var s = $(li).children('span.ui-tree-root');
+    r.mouseenter(
       function() {
-        add.show();
-        del.show();
+        $(this).find("span.ui-add").show();
+        $(this).find("span.ui-delete").show();
     }).mouseleave(
       function() {
-        add.hide();
-        del.hide();
+        $(this).find("span.ui-add").hide();
+        $(this).find("span.ui-delete").hide();
     });
     return r;
   }
