@@ -54,7 +54,6 @@ span.ui-tree-el {
 span.ui-delete {
 	background-image: url(../images/cross.png);
 	background-repeat: no-repeat;
-/*	background-position: 1px top;*/
     width: 16px;
     height: 16px;
     display: none;
@@ -63,7 +62,6 @@ span.ui-delete {
 span.ui-add {
 	background-image: url(../images/plus.png);
 	background-repeat: no-repeat;
-/*	background-position: 1px top;*/
     width: 16px;
     height: 16px;
     display: none;
