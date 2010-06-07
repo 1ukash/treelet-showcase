@@ -7,12 +7,8 @@
         clickLeaf: function() {
           alert('you clicked id! id=' + $(this).attr('id'));
         },
-        addNodeHandler: function(id) {
-          alert('add! ' + id);
-        },
-        removeNodeHandler: function(id) {
-          $('#' + id).remove();
-        },
+        addNodeHandler: showAddDialog,
+        removeNodeHandler: showDeleteDialog,
         beforeOpen: function() {
           $('#loader').show();
         },
@@ -22,7 +18,7 @@
       }
       $('#tree').tree(options);
     });
-  </script>
+  </script> 
 <% end %>
 
 <% content_for(:menu) do %>

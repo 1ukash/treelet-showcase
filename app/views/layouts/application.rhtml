@@ -25,5 +25,16 @@
     </div>
     <div id="menu" class="ui-corner-all ui-widget-content ui-widget"><%= yield :menu%></div>
   </div>
+
+  <div id="delete-dialog-confirm" title="Delete folder?" style="display:none">
+    <p>Do really want to delete folder? All subfolders and documents will be also deleted and cannot be recovered.</p>
+  </div>
+
+  <div id="add-dialog-confirm" title="Add folder." style="display:none">
+    <p>Please enter folder name</p>
+    <div style="font-color: #aa0011;display:none;" id="alert-name">Enter folder name</div>
+    <p><input id="folder-name" name="folder-name" value=""/></p>
+  </div>
+
 </body>
 </html>

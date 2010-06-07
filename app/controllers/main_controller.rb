@@ -12,4 +12,14 @@ class MainController < ApplicationController
       }
     end
   end
+
+  def add
+    n = Node.create(:parent => params[:parent], :name => params[:name])
+    render :layout => false
+  end
+
+  def delete
+    Node.delete(params[:id])
+    render :nothing => true
+  end
 end

@@ -10,7 +10,7 @@
    * Renders node li element for tree
    */
   function _renderRoot(id, name, options, isBase) {
-    var li = $('<li/>').attr('id', id);
+    var li = $('<li/>');
     var span = $('<span class="ui-tree-root ui-tree-el ui-tree-title">' + name + '</span>'). attr('id', id);
     var add = $('<span class="ui-add">&nbsp;</span>');
     
@@ -45,8 +45,8 @@
    * Renders leaf li element
    */
   function _renderLeaf(id, name) {
-    var li = $('<li/>').attr('id', id);
-    var span = $('<span class="ui-tree-leaf ui-tree-el ui-tree-title">' + name + '</span>'). attr('id', id);
+    var li = $('<li/>');
+    var span = $('<span class="ui-tree-leaf ui-tree-el ui-tree-title">' + name + '</span>').attr('id', id);
     li.append(span);
     return li;
   }
@@ -90,6 +90,7 @@
       var del = isBase ? '' : '<span class="ui-delete" >&nbsp;</span>';
       $(this).html('<span class="ui-tree-root ui-tree-el ui-tree-title" id="' + $(this).attr('id')  + '">' + $(this).html() + add + del + '</span>');
     });
+    container.find('li').removeAttr('id');
     var span = container.find('li').children('span');
     _appendAddDelEvents(span, options);
     span.click(function() {_nodeClickHandler(options, $(this).attr('id'), $(this))});
