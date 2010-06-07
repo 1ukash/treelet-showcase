@@ -1,0 +1,72 @@
+.ui-tree {
+	font-family: Verdana, sans-serif;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0px;
+	margin: 0px;
+}
+.ui-tree ul {
+	margin: 0;
+	padding: 0;
+}
+.ui-tree li {
+	list-style-type: none;
+	padding: 0px;
+	padding-left: 22px;
+	margin: 0px;
+	padding-bottom: 4px;
+	white-space: nowrap;
+}
+
+span.ui-tree-el {
+    cursor:pointer;
+}
+
+.ui-tree-root {
+	background-image: url(../images/folder-horizontal.png);
+	background-position: 1px 0px;
+	background-repeat: no-repeat;
+	padding-top: 1px;
+	padding-bottom: 3px;
+	padding-right: 2px;
+}
+
+.ui-tree-leaf {
+	background-image: url(../images/document.png);
+	background-repeat: no-repeat;
+	padding-top: 1px;
+	padding-bottom: 4px;
+	padding-right: 2px;
+	background-position: 1px 1px;
+}
+
+.ui-tree-title {
+    padding-left:20px;
+}
+
+.ui-tree-root-expanded {
+	background-image: url(../images/folder-horizontal-open.png);
+	background-repeat: no-repeat;
+	background-position: 1px top;
+}
+
+span.ui-delete {
+	background-image: url(../images/cross.png);
+	background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: none;
+}
+
+span.ui-add {
+	background-image: url(../images/plus.png);
+	background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: none;
+}
+
+li.ui-nd {
+  color: #cccccc;
+  font-size: 8pt;
+}
