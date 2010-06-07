@@ -2,14 +2,31 @@
 <% content_for(:head_scripts) do%>
   <script language="javascript" type="text/javascript">
     $(function() {
-      $('#tree').tree();
+      var options = {
+        url: '/main/branch',
+        clickLeaf: function() {
+          alert('you clicked id! id=' + $(this).attr('id'));
+        },
+        addNodeHandler: function(id) {
+          alert('add! ' + id);
+        },
+        removeNodeHandler: function(id) {
+          $('#' + id).remove();
+        },
+        beforeOpen: function() {
+          $('#loader').show();
+        },
+        openingFinished: function() {
+          $('#loader').hide();
+        }
+      }
+      $('#tree').tree(options);
     });
   </script>
 <% end %>
 
 <% content_for(:menu) do %>
-
-  <p> Foo Menu </p>
+  <p> Foo menu <img id="loader" src="/images/ajax-loader.gif" style="display:none"/></p>
   <ul id="tree">
     <% @roots.each do |r| %>
       <li id="<%= r.id %>" >
