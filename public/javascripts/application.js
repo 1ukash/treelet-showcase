@@ -22,6 +22,7 @@ function showDeleteDialog(id) {
 }
 
 function showAddDialog(id) {
+  $('#alert-name').hide();  
   $("#add-dialog-confirm").dialog({
     resizable: false,
 	height:300,
@@ -63,15 +64,36 @@ function deleteNode(id) {
 }
 
 function addNode(id, name) {
-  $('#alert-name').hide();
   $.ajax({
     url: '/main/add',
     beforeSend: function() { $('#loader').show(); },
     data: ({parent: id, name: name}),
     error: function() { $('#loader').hide();alert('error adding node to parent with id=' + id); },
+    dataType: 'json',
     success: function(data) {
       $('#loader').hide();
-      $('#' + id).children().remove();
+      var n = $('#' + id).parent();
+      n.children('ul').remove();
+      var opts = getTreeOptions();
+      opts.treeObject = data;
+      n.tree(opts);
     }
   });
+}
+
+function getTreeOptions() {
+ return {
+          url: '/main/branch',
+          clickLeaf: function() {
+            alert('you clicked id! id=' + $(this).attr('id'));
+          },
+          addNodeHandler: showAddDialog,
+          removeNodeHandler: showDeleteDialog,
+          beforeOpen: function() {
+            $('#loader').show();
+          },
+          openingFinished: function() {
+            $('#loader').hide();
+          }
+        }
 }

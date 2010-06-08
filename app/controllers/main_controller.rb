@@ -6,20 +6,32 @@ class MainController < ApplicationController
   def branch
     respond_to do |wants|
       wants.json {
-        @nodes = Node.find_all_by_parent(params[:id]);
-        @elems = Element.find_all_by_parent(params[:id]);
-        render :json => {"nodes" => @nodes, "elements" => @elems}.to_json
+        render :json => nodes_and_elements(params[:id]).to_json
       }
     end
   end
 
   def add
-    n = Node.create(:parent => params[:parent], :name => params[:name])
-    render :layout => false
+    respond_to do |wants|
+      wants.json {
+        n = Node.create(:parent => params[:parent], :name => params[:name])
+        render :json => nodes_and_elements(params[:parent]).to_json
+      }
+    end;
   end
 
   def delete
     Node.delete(params[:id])
+    Node.delete_all(:parent => params[:id])
+    Element.delete_all(:parent => params[:id])
     render :nothing => true
+  end
+
+  private
+
+  def nodes_and_elements(id)
+    nodes = Node.find_all_by_parent(id, :order => 'name asc');
+    elems = Element.find_all_by_parent(id, :order => 'name asc');
+    return {"nodes" => nodes, "elements" => elems}
   end
 end

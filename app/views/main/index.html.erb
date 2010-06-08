@@ -2,21 +2,7 @@
 <% content_for(:head_scripts) do%>
   <script language="javascript" type="text/javascript">
     $(function() {
-      var options = {
-        url: '/main/branch',
-        clickLeaf: function() {
-          alert('you clicked id! id=' + $(this).attr('id'));
-        },
-        addNodeHandler: showAddDialog,
-        removeNodeHandler: showDeleteDialog,
-        beforeOpen: function() {
-          $('#loader').show();
-        },
-        openingFinished: function() {
-          $('#loader').hide();
-        }
-      }
-      $('#tree').tree(options);
+     $('#tree').tree(getTreeOptions());
     });
   </script> 
 <% end %>
