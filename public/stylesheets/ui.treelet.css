@@ -18,7 +18,7 @@
 	white-space: nowrap;
 }
 
-span.ui-tree-el {
+.ui-tree-el {
     cursor:pointer;
 }
 
@@ -31,11 +31,12 @@ span.ui-tree-el {
 	padding-right: 2px;
 }
 
+
 .ui-tree-leaf {
 	background-image: url(../images/document.png);
 	background-repeat: no-repeat;
 	padding-top: 1px;
-	padding-bottom: 4px;
+	padding-bottom: 3px;
 	padding-right: 2px;
 	background-position: 1px 1px;
 }
@@ -48,6 +49,9 @@ span.ui-tree-el {
 	background-image: url(../images/folder-horizontal-open.png);
 	background-repeat: no-repeat;
 	background-position: 1px top;
+	padding-bottom: 3px;
+	padding-right: 2px;
+	background-position: 1px 0px;
 }
 
 span.ui-delete {
@@ -61,6 +65,7 @@ span.ui-delete {
 span.ui-add {
 	background-image: url(../images/plus.png);
 	background-repeat: no-repeat;
+line-height: 16px; 
     width: 16px;
     height: 16px;
     display: none;
