@@ -65,7 +65,6 @@ span.ui-delete {
 span.ui-add {
 	background-image: url(../images/plus.png);
 	background-repeat: no-repeat;
-line-height: 16px; 
     width: 16px;
     height: 16px;
     display: none;
